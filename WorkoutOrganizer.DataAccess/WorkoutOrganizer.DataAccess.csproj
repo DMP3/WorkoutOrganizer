@@ -108,6 +108,10 @@
     <Compile Include="Migrations\201908241102199_AddedPhoneNumberValidation.Designer.cs">
       <DependentUpon>201908241102199_AddedPhoneNumberValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908241231567_Validations.cs" />
+    <Compile Include="Migrations\201908241231567_Validations.Designer.cs">
+      <DependentUpon>201908241231567_Validations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkoutOrganizerDbContext.cs" />
@@ -167,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908241102199_AddedPhoneNumberValidation.resx">
       <DependentUpon>201908241102199_AddedPhoneNumberValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908241231567_Validations.resx">
+      <DependentUpon>201908241231567_Validations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
