@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="WorkoutOrganizer.UI.View.NavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WorkoutOrganizer.UI.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="500">
+    <UserControl.Resources>
+        <Style x:Key="NaviItemContainerStyle" TargetType="ContentPresenter">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+        <DataTemplate x:Key="NaviItemTemplate">
+            <Button Content="{Binding DisplayMember}"
+                    Command="{Binding OpenDetailViewCommand}"
+                    FontSize="16">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="grid">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="FontWeight" Value="Normal"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Expander Header="Клиенти" MaxHeight="300" IsExpanded="True">
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Clients}"
+                          ItemContainerStyle="{StaticResource NaviItemContainerStyle}"
+                          ItemTemplate="{StaticResource NaviItemTemplate}"
+                          Margin="10"/>
+            </ScrollViewer>
+        </Expander>
+
+        <Expander Header="Тренировки" MaxHeight="300" IsExpanded="True" Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Workouts}"
+                          ItemContainerStyle="{StaticResource NaviItemContainerStyle}"
+                          ItemTemplate="{StaticResource NaviItemTemplate}"
+                          Margin="10"/>
+            </ScrollViewer>
+        </Expander>
+        <Expander Header="Упражнения" MaxHeight="300" Grid.Row="2" IsExpanded="True">
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Exercises}"
+                          ItemContainerStyle="{StaticResource NaviItemContainerStyle}"
+                          ItemTemplate="{StaticResource NaviItemTemplate}"
+                          Margin="10"/>
+            </ScrollViewer>
+        </Expander>
+    </Grid>
+</UserControl>

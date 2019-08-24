@@ -1,0 +1,86 @@
+﻿<Controls:MetroWindow x:Class="WorkoutOrganizer.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorkoutOrganizer.UI"
+        xmlns:view="clr-namespace:WorkoutOrganizer.UI.View"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:viewModel="clr-namespace:WorkoutOrganizer.UI.ViewModel"
+        mc:Ignorable="d"
+        Title="Workout Organizer" Height="1000" Width="1200" FontSize="20"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        WindowState="Maximized">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:ClientDetailViewModel}">
+            <view:ClientDetailView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:WorkoutDetailViewModel}">
+            <view:WorkoutDetailView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:MusculeGroupDetailViewModel}">
+            <view:MusculeGroupDetailView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ExerciseDetailViewModel}">
+            <view:ExerciseDetailView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:EquipmentDetailViewModel}">
+            <view:EquipmentDetailView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2" FontSize="20">
+            <MenuItem Header="Създаване">
+                <MenuItem Header="Нов клиент" Command="{Binding CreateNewDetailCommand}"
+                          CommandParameter="{x:Type viewModel:ClientDetailViewModel}"/>
+                <MenuItem Header="Нова тренировка" Command="{Binding CreateNewDetailCommand}"
+                          CommandParameter="{x:Type viewModel:WorkoutDetailViewModel}"/>
+                <MenuItem Header="Ново упражнение" Command="{Binding CreateNewDetailCommand}"
+                          CommandParameter="{x:Type viewModel:ExerciseDetailViewModel}"/>
+            </MenuItem>
+            <MenuItem Header="Редактиране">
+                <MenuItem Header="Мускулни групи" Command="{Binding OpenSingleDetailViewCommand}"
+                          CommandParameter="{x:Type viewModel:MusculeGroupDetailViewModel}"/>
+                <MenuItem Header="Оборудване" Command="{Binding OpenSingleDetailViewCommand}"
+                          CommandParameter="{x:Type viewModel:EquipmentDetailViewModel}"/>
+            </MenuItem>
+        </Menu>
+        <view:NavigationView Grid.Row ="1"
+                    DataContext="{Binding NavigationViewModel}"/>
+        <TabControl Grid.Row ="1"
+                    Grid.Column="1"
+                    ItemsSource="{Binding DetailViewModels}"
+                    SelectedItem="{Binding SelectedDetailViewModel, Mode=TwoWay}">
+            <TabControl.ItemContainerStyle>
+                <Style TargetType="TabItem"
+                       BasedOn="{StaticResource {x:Type TabItem}}">
+                    <Setter Property="Background" Value="#333333"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                </Style>
+            </TabControl.ItemContainerStyle>
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Title}"/>
+                        <TextBlock Text="*" Visibility="{Binding HasChanges,
+                            Converter={StaticResource booleanToVisibilityConverter}}"/>
+                        <Button Command="{Binding CloseDetailViewCommand}"
+                                Style="{StaticResource ChromelessButtonStyle}"
+                                VerticalContentAlignment="Top" Margin="2 0 2 2"
+                                Content="X" FontSize="20"/>
+                    </StackPanel>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+        </TabControl>
+    </Grid>
+</Controls:MetroWindow>

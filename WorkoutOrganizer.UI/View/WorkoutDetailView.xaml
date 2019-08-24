@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="WorkoutOrganizer.UI.View.WorkoutDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WorkoutOrganizer.UI.View"
+             xmlns:viewModel="clr-namespace:WorkoutOrganizer.UI.ViewModel"
+             xmlns:view="clr-namespace:WorkoutOrganizer.UI.View"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:model="clr-namespace:WorkoutOrganizer.Model;assembly=WorkoutOrganizer.Model"
+             xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Наименование на тренировката:" Margin="10 10 10 10"/>
+        <TextBox Grid.Row="1" Text="{Binding Workout.Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Grid.Row="2" Content="Дата:" Margin="10 0"/>
+        <toolkit:DateTimePicker Grid.Row="3" Value="{Binding Workout.Date, Mode=TwoWay}" />
+
+        <Grid Grid.Row="4" Margin="10">
+            <Grid.Resources>
+                <DataTemplate DataType="{x:Type model:Client}">
+                    <TextBlock><Run Text="{Binding FirstName}"/> <Run Text="{Binding LastName}"/></TextBlock>
+                </DataTemplate>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Добавени клиенти"/>
+            <ListView ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="200" Grid.Row="1" ItemsSource="{Binding AddedClients}"
+                      SelectedItem="{Binding SelectedAddedClient}"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Button Content="&lt;&lt;" Margin="10" Command="{Binding AddClientCommand}"/>
+                <Button Content="&gt;&gt;" Margin="10 0 10 0" Command="{Binding RemoveClientCommand}"/>
+            </StackPanel>
+
+            <Label Content="Налични клиенти" Grid.Column="2"/>
+            <ListView ScrollViewer.VerticalScrollBarVisibility="Auto" MaxHeight="200" Grid.Row="1" ItemsSource="{Binding AvailableClients}"
+                      SelectedItem="{Binding SelectedAvailableClient}" Grid.Column="2"/>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Search bar Grid-->
+            <!--<Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Search Exercises"/>
+                <TextBox Grid.Row="1" Width="Auto" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGrid Grid.Row="2" Width="Auto" ItemsSource="{Binding SearchExercises}" AutoGenerateColumns="False"
+                          SelectedItem="{Binding SelectedExercise, Mode=TwoWay}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Наименование" IsReadOnly="True" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Мускулна Група" IsReadOnly="True" Binding="{Binding MusculeGroup.Name}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                --><!--<ListBox Grid.Row="2" Width="Auto" Height="Auto" MaxHeight="150" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ItemsSource="{Binding FilteredItems}" 
+                         DisplayMemberPath="DisplayMember"
+                         SelectedValuePath="Id"
+                         SelectedItem="{Binding SelectedExercise}"/>--><!--
+                <Button Grid.Row="3" Content="Add To The List" Command="{Binding AddExerciseSetupCommand}" Margin="10" Width="Auto"/>
+            </Grid>-->
+
+
+            <Label  Content="Тренировъчна програма:"/>
+            <DataGrid Grid.Row="1" ItemsSource="{Binding ExerciseSetups}"
+                      Width="Auto"
+                      SelectedItem="{Binding SelectedExerciseSetup, Mode=TwoWay}"
+                      AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <CollectionViewSource x:Key="Exercises" Source="{Binding Exercises}"/>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Ред" Width="Auto" IsReadOnly="True"
+                                    ElementStyle="{StaticResource DataGridColumnStyle}"
+                                    EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                                    Binding="{Binding Position, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridComboBoxColumn Header="Упражнение" Width="*" MinWidth="200"
+                                    ItemsSource="{Binding Source={StaticResource Exercises}}"
+                                    DisplayMemberPath="DisplayMember"
+                                    SelectedValuePath="Id"
+                                    SelectedValueBinding="{Binding ExerciseId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Серии" Width="Auto" MinWidth="100"
+                                    ElementStyle="{StaticResource DataGridColumnStyle}"
+                                    EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                                    Binding="{Binding Sets, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Повторения" Width="Auto" MinWidth="150"
+                                    ElementStyle="{StaticResource DataGridColumnStyle}"
+                                    EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                                    Binding="{Binding Reps, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Тежести" Width="Auto" MinWidth="175"
+                                    ElementStyle="{StaticResource DataGridColumnStyle}"
+                                    EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                                    Binding="{Binding Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Почивка" Width="Auto" MinWidth="175"
+                                    ElementStyle="{StaticResource DataGridColumnStyle}"
+                                    EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                                    Binding="{Binding Rest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Row="2" Margin="0 5 5 5" Orientation="Horizontal">
+                <Button Content="Предвижи нагоре" Command="{Binding MoveUp}" Margin="5" Width="175"/>
+                <Button Content="Предвижи надолу" Command="{Binding MoveDown}" Margin="5" Width="180"/>
+                <Button Content="Добави ред" Command="{Binding AddExerciseSetupCommand}" Margin="5" Width="150"/>
+                <Button Content="Премахни ред" Command="{Binding RemoveExerciseSetupCommand}" Margin="5" Width="150"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="7" Orientation="Horizontal">
+            <Button Content="Запази" Width="125" Margin="10" Command="{Binding SaveCommand}"/>
+            <Button Content="Изтрий" Width="125" Margin="10" Command="{Binding DeleteCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
