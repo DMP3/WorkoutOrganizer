@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201908220927380_AddedWorkoutRowVersion.Designer.cs">
       <DependentUpon>201908220927380_AddedWorkoutRowVersion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908241102199_AddedPhoneNumberValidation.cs" />
+    <Compile Include="Migrations\201908241102199_AddedPhoneNumberValidation.Designer.cs">
+      <DependentUpon>201908241102199_AddedPhoneNumberValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkoutOrganizerDbContext.cs" />
@@ -160,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908220927380_AddedWorkoutRowVersion.resx">
       <DependentUpon>201908220927380_AddedWorkoutRowVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908241102199_AddedPhoneNumberValidation.resx">
+      <DependentUpon>201908241102199_AddedPhoneNumberValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

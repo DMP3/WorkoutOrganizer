@@ -14,21 +14,26 @@ namespace WorkoutOrganizer.Model
         }
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Полето е задължително")]
+        [StringLength(50, ErrorMessage = "Името трябва да е с дължина между {2} и {1} символа.", MinimumLength = 2)]
+        [RegularExpression(@"^[а-яА-Яa-zA-Z''-'\s]{1,50}$",
+         ErrorMessage = "Симовлът не е позволен")]
         public string FirstName { get; set; }
 
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "Името трябва да е с максимална дължина- {2} символа")]
+        [RegularExpression(@"^[а-яА-Яa-zA-Z''-'\s]{1,50}$",
+         ErrorMessage = "Симовлът не е позволен")]
         public string LastName { get; set; }
 
         [EmailAddress]
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Невалиден Email адрес")]
         public string Email { get; set; }
 
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
         public string Goals { get; set; }
 
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
         public string Injuries { get; set; }
 
         [Timestamp]

@@ -19,9 +19,10 @@ namespace WorkoutOrganizer.Model
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(50, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
         public string Title { get; set; }
 
+        
         public DateTime Date { get; set; }
 
         [Timestamp]

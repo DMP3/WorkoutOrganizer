@@ -18,13 +18,13 @@ namespace WorkoutOrganizer.Model
         public int Id { get; set; }
 
         [Required]
-        [StringLength(70)]
+        [StringLength(70, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
         public string Name { get; set; }
 
-        [StringLength(120)]
+        [StringLength(120, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
         public string Description { get; set; }
 
-        [Url]
+        [Url(ErrorMessage = "Невалиден адрес.")]
         public string DemoLink { get; set; }
 
         [Timestamp]
