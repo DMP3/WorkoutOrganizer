@@ -17,11 +17,11 @@ namespace WorkoutOrganizer.Model
         }
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(70, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
+        [Required(ErrorMessage = "Полето е задължително")]
+        [StringLength(70, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string Name { get; set; }
 
-        [StringLength(120, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
+        [StringLength(120, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string Description { get; set; }
 
         [Url(ErrorMessage = "Невалиден адрес.")]
