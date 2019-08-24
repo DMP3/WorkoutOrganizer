@@ -9,16 +9,16 @@ namespace WorkoutOrganizer.Model
         [Required]
         public int Position { get; set; }
 
-        [StringLength(10, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
+        [StringLength(10, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string Sets { get; set; }
 
-        [StringLength(10, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
+        [StringLength(10, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string Reps { get; set; }
 
-        [StringLength(20, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
+        [StringLength(20, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string Weight { get; set; }
 
-        [StringLength(10, ErrorMessage = "Полето е с максимална дължина- {2} символа")]
+        [StringLength(10, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string Rest { get; set; }
 
         public int ExerciseId { get; set; }
