@@ -372,23 +372,32 @@ namespace WorkoutOrganizer.UI.ViewModel
 
         private async void OnAddToExerciseSetupsExecute()
         {
-            var exerciseToAdd = SelectedFilteredExercise;
-            var position = ExerciseSetups.Count + 1;
-            var wrapper = new ExerciseSetupWrapper(new ExerciseSetup { WorkoutId = Id, Position = position, ExerciseId = exerciseToAdd.Id });
+            if(Id <= 0) //if it's newly created
+            {
+                await MessageDialogService.ShowInfoDialogAsync("Натиснете бутона ЗАПАЗИ преди да добавите упражнение");
+                return;
+            }
+            else
+            {
+                var exerciseToAdd = SelectedFilteredExercise;
+                var position = ExerciseSetups.Count + 1;
+                var wrapper = new ExerciseSetupWrapper(new ExerciseSetup { WorkoutId = Id, Position = position, ExerciseId = exerciseToAdd.Id });
 
-            wrapper.PropertyChanged += Wrapper_PropertyChanged;
-            _exerciseSetupRepository.Add(wrapper.Model);
-            ExerciseSetups.Add(wrapper);
+                wrapper.PropertyChanged += Wrapper_PropertyChanged;
+                _exerciseSetupRepository.Add(wrapper.Model);
+                ExerciseSetups.Add(wrapper);
 
-            await _exerciseSetupRepository.SaveAsync();
-            HasChanges = _exerciseSetupRepository.HasChanges();
 
-            await _workoutRepository.SaveAsync();
-            HasChanges = _workoutRepository.HasChanges();
-            Id = Workout.Id;
-            RaiseDetailSavedEvent(Workout.Id, Workout.Title);
+                await _exerciseSetupRepository.SaveAsync();
+                HasChanges = _exerciseSetupRepository.HasChanges();
 
-            SelectedFilteredExercise = null;
+                await _workoutRepository.SaveAsync();
+                HasChanges = _workoutRepository.HasChanges();
+                Id = Workout.Id;
+                RaiseDetailSavedEvent(Workout.Id, Workout.Title);
+
+                SelectedFilteredExercise = null;
+            }
         }
 
         private bool OnAddToExerciseSetupsCanExecute()
