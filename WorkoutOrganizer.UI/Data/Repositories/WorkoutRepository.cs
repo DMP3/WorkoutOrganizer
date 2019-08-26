@@ -27,11 +27,29 @@ namespace WorkoutOrganizer.UI.Data.Repositories
                 .ToListAsync();
         }
 
+        public async Task<List<Exercise>> GetAllExercisesAsync()
+        {
+            return await Context.Set<Exercise>()
+                .Include(m => m.MusculeGroup)
+                .Include(m => m.Equipment)
+                .ToListAsync();
+        }
+
         public async Task ReloadClientAsync(int clientId)
         {
             var dbEntityEntry = Context.ChangeTracker.Entries<Client>()
                 .SingleOrDefault(db => db.Entity.Id == clientId);
             if(dbEntityEntry != null)
+            {
+                await dbEntityEntry.ReloadAsync();
+            }
+        }
+
+        public async Task ReloadExerciseAsync(int exerciseId)
+        {
+            var dbEntityEntry = Context.ChangeTracker.Entries<Exercise>()
+                .SingleOrDefault(db => db.Entity.Id == exerciseId);
+            if (dbEntityEntry != null)
             {
                 await dbEntityEntry.ReloadAsync();
             }

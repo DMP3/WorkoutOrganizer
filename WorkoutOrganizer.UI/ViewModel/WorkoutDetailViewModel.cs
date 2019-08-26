@@ -24,7 +24,10 @@ namespace WorkoutOrganizer.UI.ViewModel
         private IExerciseLookupDataService _exerciseLookupDataService;
         private Client _selectedAvailableClient;
         private Client _selectedAddedClient;
+        private string _searchText;
+        private Exercise _selectedFilteredExercise;
         private List<Client> _allClients;
+        private List<Exercise> _allExercises;
         private ExerciseSetupWrapper _selectedExerciseSetup;
 
         public WorkoutDetailViewModel(IEventAggregator eventAggregator,
@@ -45,6 +48,9 @@ namespace WorkoutOrganizer.UI.ViewModel
             AvailableClients = new ObservableCollection<Client>();
             Exercises = new ObservableCollection<LookupItem>();
             ExerciseSetups = new ObservableCollection<ExerciseSetupWrapper>();
+
+            AddToExerciseSetups = new DelegateCommand(OnAddToExerciseSetupsExecute, OnAddToExerciseSetupsCanExecute);
+
             AddClientCommand = new DelegateCommand(OnAddClientExecute, OnAddClientCanExecute);
             RemoveClientCommand = new DelegateCommand(OnRemoveClientExecute, OnRemoveClientCanExecute);
             AddExerciseSetupCommand = new DelegateCommand(OnAddExerciseSetup);
@@ -66,12 +72,43 @@ namespace WorkoutOrganizer.UI.ViewModel
         public ICommand RemoveClientCommand { get; }
         public ICommand AddExerciseSetupCommand { get; }
         public ICommand RemoveExerciseSetupCommand { get; }
+        public ICommand AddToExerciseSetups { get; }
         public ICommand MoveUp { get; }
         public ICommand MoveDown { get; }
         public ObservableCollection<Client> AddedClients { get; }
         public ObservableCollection<Client> AvailableClients { get; }
         public ObservableCollection<ExerciseSetupWrapper> ExerciseSetups { get; }
         public ObservableCollection<LookupItem> Exercises { get; }
+        public IEnumerable<Exercise> FilteredExercises
+        {
+            get
+            {
+                if (SearchText == null) return _allExercises;
+
+                return _allExercises.Where(x => x.Name.ToUpper().Contains(SearchText.ToUpper()));
+            }
+        }
+        public Exercise SelectedFilteredExercise
+        {
+            get { return _selectedFilteredExercise; }
+            set
+            {
+                _selectedFilteredExercise = value;
+                OnPropertyChanged();
+                ((DelegateCommand)AddToExerciseSetups).RaiseCanExecuteChanged();
+            }
+        }
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+
+                OnPropertyChanged("SearchText");
+                OnPropertyChanged("FilteredExercises");
+            }
+        }
         public Client SelectedAvailableClient
         {
             get { return _selectedAvailableClient; }
@@ -116,6 +153,7 @@ namespace WorkoutOrganizer.UI.ViewModel
             InitializeWorkout(workout);
 
             _allClients = await _workoutRepository.GetAllClientsAsync();
+            _allExercises = await _workoutRepository.GetAllExercisesAsync();
             SetupPickList();
 
             await InitializeExerciseSetups(workoutId);
@@ -146,9 +184,16 @@ namespace WorkoutOrganizer.UI.ViewModel
                     Id = Workout.Id;
                     RaiseDetailSavedEvent(Workout.Id, Workout.Title);
                 });
+            try
+            {
+                await _exerciseSetupRepository.SaveAsync();
+                HasChanges = _exerciseSetupRepository.HasChanges();
+            }
+            catch
+            {
+                return;
+            }
 
-            await _exerciseSetupRepository.SaveAsync();
-            HasChanges = _exerciseSetupRepository.HasChanges();
         }
 
         private void SetupPickList()
@@ -325,6 +370,41 @@ namespace WorkoutOrganizer.UI.ViewModel
             return SelectedExerciseSetup != null;
         }
 
+        private async void OnAddToExerciseSetupsExecute()
+        {
+            if(Id <= 0) //if it's newly created
+            {
+                await MessageDialogService.ShowInfoDialogAsync("Натиснете бутона ЗАПАЗИ преди да добавите упражнение");
+                return;
+            }
+            else
+            {
+                var exerciseToAdd = SelectedFilteredExercise;
+                var position = ExerciseSetups.Count + 1;
+                var wrapper = new ExerciseSetupWrapper(new ExerciseSetup { WorkoutId = Id, Position = position, ExerciseId = exerciseToAdd.Id });
+
+                wrapper.PropertyChanged += Wrapper_PropertyChanged;
+                _exerciseSetupRepository.Add(wrapper.Model);
+                ExerciseSetups.Add(wrapper);
+
+
+                await _exerciseSetupRepository.SaveAsync();
+                HasChanges = _exerciseSetupRepository.HasChanges();
+
+                await _workoutRepository.SaveAsync();
+                HasChanges = _workoutRepository.HasChanges();
+                Id = Workout.Id;
+                RaiseDetailSavedEvent(Workout.Id, Workout.Title);
+
+                SelectedFilteredExercise = null;
+            }
+        }
+
+        private bool OnAddToExerciseSetupsCanExecute()
+        {
+            return SelectedFilteredExercise != null;
+        }
+
         private bool MoveDownCanExecute()
         {
             return SelectedExerciseSetup != null && ExerciseSetups.Count != 1;
@@ -399,7 +479,20 @@ namespace WorkoutOrganizer.UI.ViewModel
             }
             if (args.ViewModelName == nameof(ExerciseDetailViewModel))
             {
+                _allExercises = await _workoutRepository.GetAllExercisesAsync();
                 await LoadAsync(Id);
+                var exerciseCount = ExerciseSetups.Count;
+                if (exerciseCount != 0)
+                {
+                    for (int i = 1; i <= exerciseCount; i++)
+                    {
+                        ExerciseSetups[i - 1].Position = i;
+                    }
+                }
+                await _workoutRepository.SaveAsync();
+                HasChanges = _workoutRepository.HasChanges();
+                Id = Workout.Id;
+                RaiseDetailSavedEvent(Workout.Id, Workout.Title);
             }
         }
     }
