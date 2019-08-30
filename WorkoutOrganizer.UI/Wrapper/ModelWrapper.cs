@@ -43,10 +43,6 @@ namespace WorkoutOrganizer.UI.Wrapper
             
             foreach (var result in results)
             {
-                if(result.ErrorMessage == "The Email field is not a valid e-mail address.")
-                {
-                    result.ErrorMessage = "Невалиден Email адрес.";
-                }
                 AddError(propertyName, result.ErrorMessage);
             }
         }

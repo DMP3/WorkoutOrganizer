@@ -108,9 +108,9 @@
     <Compile Include="Migrations\201908241102199_AddedPhoneNumberValidation.Designer.cs">
       <DependentUpon>201908241102199_AddedPhoneNumberValidation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908241231567_Validations.cs" />
-    <Compile Include="Migrations\201908241231567_Validations.Designer.cs">
-      <DependentUpon>201908241231567_Validations.cs</DependentUpon>
+    <Compile Include="Migrations\201908300843548_AddedColumnLengthRestrictions.cs" />
+    <Compile Include="Migrations\201908300843548_AddedColumnLengthRestrictions.Designer.cs">
+      <DependentUpon>201908300843548_AddedColumnLengthRestrictions.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="Migrations\201908241102199_AddedPhoneNumberValidation.resx">
       <DependentUpon>201908241102199_AddedPhoneNumberValidation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908241231567_Validations.resx">
-      <DependentUpon>201908241231567_Validations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908300843548_AddedColumnLengthRestrictions.resx">
+      <DependentUpon>201908300843548_AddedColumnLengthRestrictions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
