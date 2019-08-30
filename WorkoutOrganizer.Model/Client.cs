@@ -28,6 +28,7 @@ namespace WorkoutOrganizer.Model
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Невалиден Email адрес")]
         public string Email { get; set; }
 
+
         [StringLength(200, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string Goals { get; set; }
 
