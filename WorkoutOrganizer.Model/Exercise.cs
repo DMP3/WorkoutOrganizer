@@ -13,7 +13,6 @@ namespace WorkoutOrganizer.Model
         public Exercise()
         {
             ExerciseSetups = new Collection<ExerciseSetup>();
-             
         }
         public int Id { get; set; }
 
@@ -25,6 +24,7 @@ namespace WorkoutOrganizer.Model
         public string Description { get; set; }
 
         [Url(ErrorMessage = "Невалиден адрес.")]
+        [StringLength(2083, ErrorMessage = "Полето е с максимална дължина- {1} символа")]
         public string DemoLink { get; set; }
 
         [Timestamp]

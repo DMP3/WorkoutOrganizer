@@ -35,8 +35,6 @@ namespace WorkoutOrganizer.UI.Startup
                 .Keyed<IDetailViewModel>(nameof(EquipmentDetailViewModel));
             builder.RegisterType<ExerciseDetailViewModel>()
                 .Keyed<IDetailViewModel>(nameof(ExerciseDetailViewModel));
-            //builder.RegisterType<ExerciseSetupDetailViewModel>()
-            //    .Keyed<IDetailViewModel>(nameof(ExerciseSetupDetailViewModel));
 
             builder.RegisterType<LookupDataService>().AsImplementedInterfaces();
             builder.RegisterType<ClientRepository>().As<IClientRepository>();
