@@ -30,9 +30,11 @@ namespace WorkoutOrganizer.UI.ViewModel
             RemoveCommand = new DelegateCommand(OnRemoveExecute, OnRemoveCanExecute);
         }
 
-        public ObservableCollection<MusculeGroupWrapper> MusculeGroups { get; }
         public ICommand AddCommand { get; }
         public ICommand RemoveCommand { get; }
+
+        public ObservableCollection<MusculeGroupWrapper> MusculeGroups { get; }
+
         public MusculeGroupWrapper SelectedMusculeGroup
         {
             get { return _selectedMusculeGroup; }

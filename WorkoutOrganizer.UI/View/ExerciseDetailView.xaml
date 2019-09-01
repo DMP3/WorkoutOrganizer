@@ -53,10 +53,8 @@
                Margin="10 0 10 10"/>
 
         <StackPanel Grid.Row="11" Orientation="Horizontal">
-            <Button Content="Запази" Width="125" Margin="10"
-              Command="{Binding SaveCommand}"/>
-            <Button Content="Изтрий" Width="125"  Margin="10"
-              Command="{Binding DeleteCommand}"/>
+            <Button Content="Запази" Width="125" Margin="10" Command="{Binding SaveCommand}"/>
+            <Button Content="Изтрий" Width="125"  Margin="10" Command="{Binding DeleteCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

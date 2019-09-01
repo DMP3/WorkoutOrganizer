@@ -15,8 +15,8 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="WorkoutOrganizer.UI.Data.Lookups.LookupDataService" BaseTypeListCollapsed="true">
-    <Position X="29.75" Y="2.25" Width="2.75" />
+  <Class Name="WorkoutOrganizer.UI.Data.Lookups.LookupDataService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAABAAAAAAABAAAAAAAAAUQAAAAAAAAAA=</HashCode>
       <FileName>Data\Lookups\LookupDataService.cs</FileName>
@@ -24,7 +24,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Data.Repositories.ClientRepository" Collapsed="true">
-    <Position X="43" Y="12.5" Width="1.5" />
+    <Position X="12" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAIAA=</HashCode>
       <FileName>Data\Repositories\ClientRepository.cs</FileName>
@@ -32,7 +32,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Data.Repositories.EquipmentRepository" Collapsed="true">
-    <Position X="28.75" Y="12.5" Width="4.5" />
+    <Position X="0.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Data\Repositories\EquipmentRepository.cs</FileName>
@@ -40,7 +40,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Data.Repositories.ExerciseRepository" Collapsed="true">
-    <Position X="34" Y="12.5" Width="1.5" />
+    <Position X="3" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Data\Repositories\ExerciseRepository.cs</FileName>
@@ -48,7 +48,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Data.Repositories.ExerciseSetupRepository" Collapsed="true">
-    <Position X="36.25" Y="12.5" Width="1.5" />
+    <Position X="5.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\Repositories\ExerciseSetupRepository.cs</FileName>
@@ -56,7 +56,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Data.Repositories.GenericRepository&lt;TEntity, TContext&gt;" Collapsed="true">
-    <Position X="37.25" Y="11.25" Width="3.5" />
+    <Position X="6.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAMAAAAAAgAAAEAAAAAABAAAAIAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Data\Repositories\GenericRepository.cs</FileName>
@@ -64,7 +64,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Data.Repositories.MusculeGroupRepository" Collapsed="true">
-    <Position X="38.5" Y="12.5" Width="1.5" />
+    <Position X="7.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Data\Repositories\MusculeGroupRepository.cs</FileName>
@@ -72,7 +72,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Data.Repositories.WorkoutRepository" Collapsed="true">
-    <Position X="40.75" Y="12.5" Width="1.5" />
+    <Position X="9.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAEAAAFAAAAAAAAAAAAAAAEAAAAAAIAA=</HashCode>
       <FileName>Data\Repositories\WorkoutRepository.cs</FileName>
@@ -80,7 +80,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Event.AfterCollectionSavedEvent" Collapsed="true">
-    <Position X="34.5" Y="0.5" Width="1.5" />
+    <Position X="35.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Event\AfterCollectionSavedEvent.cs</FileName>
@@ -115,7 +115,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Event.AfterDetailDeletedEventArgs" Collapsed="true">
-    <Position X="34.5" Y="1.5" Width="1.5" />
+    <Position X="35.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Event\AfterDetailDeletedEvent.cs</FileName>
@@ -135,35 +135,28 @@
       <FileName>Event\AfterDetailSavedEvent.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WorkoutOrganizer.UI.Event.OpenChildDetailView" Collapsed="true">
-    <Position X="41" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Event\OpenChildDetailView.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="WorkoutOrganizer.UI.Event.OpenDetailViewEvent" Collapsed="true">
-    <Position X="42.75" Y="3.5" Width="1.5" />
+    <Position X="41" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Event\OpenDetailViewEvent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Event.OpenDetailViewEventArgs" Collapsed="true">
-    <Position X="34.75" Y="4.25" Width="2.5" />
+    <Position X="42.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Event\OpenDetailViewEvent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Properties.Resources" Collapsed="true">
-    <Position X="37.5" Y="4.5" Width="1.5" />
+    <Position X="35.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Properties.Settings" Collapsed="true">
-    <Position X="39.25" Y="4.5" Width="1.5" />
+    <Position X="37.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
@@ -176,7 +169,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.View.ClientDetailView" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="34.75" Y="2.5" Width="1.75" />
+    <Position X="35.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\ClientDetailView.xaml.cs</FileName>
@@ -184,7 +177,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.View.EquipmentDetailView" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="36.75" Y="2.5" Width="1.75" />
+    <Position X="37.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\EquipmentDetailView.xaml.cs</FileName>
@@ -192,7 +185,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.View.ExerciseDetailView" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="39.25" Y="2.25" Width="2" />
+    <Position X="39.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\ExerciseDetailView.xaml.cs</FileName>
@@ -216,7 +209,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.View.WorkoutDetailView" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="41" Y="4.5" Width="1.5" />
+    <Position X="39.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\WorkoutDetailView.xaml.cs</FileName>
@@ -231,112 +224,76 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.ClientDetailViewModel">
-    <Position X="0.75" Y="11.75" Width="2.25" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.ClientDetailViewModel" Collapsed="true">
+    <Position X="10.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQgAAAAsAAAJAEgAAAAAQSAIgAEAAEABAAAQAAAAAAQ=</HashCode>
       <FileName>ViewModel\ClientDetailViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.DetailViewModelBase">
-    <Position X="6.5" Y="7.25" Width="2" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.DetailViewModelBase" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAkCAAA5AIABEEEAAABAAAAAAAEQAAAAAAAAAAEEAIA=</HashCode>
       <FileName>ViewModel\DetailViewModelBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.EquipmentDetailViewModel">
-    <Position X="5.75" Y="13" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.EquipmentDetailViewModel" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAgAAABBAECAEEAAgACAIEAAEAAAAAAAAAAAgA=</HashCode>
       <FileName>ViewModel\EquipmentDetailViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.ExerciseDetailViewModel">
-    <Position X="7.5" Y="13" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.ExerciseDetailViewModel" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAgACAAkEAgDAAAAAAEAQEAAAAEAAAABAAAAAAAAAiI=</HashCode>
       <FileName>ViewModel\ExerciseDetailViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.MainViewModel">
-    <Position X="7" Y="2.75" Width="3" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.MainViewModel" Collapsed="true">
+    <Position X="33.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIACAKiAgFACIAAFAAEAAAAAAAAAAAEEAIAAAAAAAA=</HashCode>
       <FileName>ViewModel\MainViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.MusculeGroupDetailViewModel">
-    <Position X="3.25" Y="11.75" Width="2.25" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.MusculeGroupDetailViewModel" Collapsed="true">
+    <Position X="1.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgADEAgAAABBAACAEAAggAAAIEAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\MusculeGroupDetailViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.NavigationItemViewModel">
-    <Position X="10.75" Y="2.75" Width="2.75" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.NavigationItemViewModel" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACCAACAAAAAAAAAAAAAACAAAAAAAAAAAAAQAACAAA=</HashCode>
       <FileName>ViewModel\NavigationItemViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.NavigationViewModel">
-    <Position X="14" Y="2.75" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.NavigationViewModel" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAiAAAAAAAAsCEAAAgAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>ViewModel\NavigationViewModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.ViewModelBase">
-    <Position X="16" Y="0.5" Width="2.25" />
+  <Class Name="WorkoutOrganizer.UI.ViewModel.ViewModelBase" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\ViewModelBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="WorkoutOrganizer.UI.ViewModel.WorkoutDetailViewModel">
-    <Position X="9.5" Y="11.75" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+  <Class Name="WorkoutOrganizer.UI.ViewModel.WorkoutDetailViewModel" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CQkSjRIkAhCZAABIkAEQLAgQAAEOAMFAUBBAICoAAAg=</HashCode>
       <FileName>ViewModel\WorkoutDetailViewModel.cs</FileName>
@@ -344,87 +301,56 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.ClientPhoneNumberWrapper">
-    <Position X="19.25" Y="11.75" Width="2.25" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="24" Y="7.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wrapper\ClientPhoneNumberWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.ClientWrapper">
-    <Position X="22" Y="10.5" Width="1.75" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="26.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAEAAACAAAAAAAAAAAAAAAAEAAAQAAAAAAAAAIAg=</HashCode>
       <FileName>Wrapper\ClientWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.EquipmentWrapper">
-    <Position X="20.75" Y="8" Width="2" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="28.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wrapper\EquipmentWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.ExerciseSetupWrapper">
-    <Position X="13.75" Y="8.5" Width="2.25" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
-    <InheritanceLine Type="WorkoutOrganizer.UI.Wrapper.ModelWrapper&lt;T&gt;" ManuallyRouted="true">
-      <Path>
-        <Point X="17.25" Y="9.246" />
-        <Point X="16" Y="9.246" />
-      </Path>
-    </InheritanceLine>
+    <Position X="30" Y="7.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAICAAAAAAAAAAAgAAAACAAAEDAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wrapper\ExerciseSetupWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.ExerciseWrapper">
-    <Position X="14.75" Y="11.75" Width="1.75" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="17.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgAAAAAAAAAAQAIAMAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Wrapper\ExerciseWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.ModelWrapper&lt;T&gt;">
-    <Position X="17.25" Y="7.75" Width="2" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="24" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAASEABAAAAAgAAAAAAAA=</HashCode>
       <FileName>Wrapper\ModelWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.MusculeGroupWrapper">
-    <Position X="12" Y="12" Width="2" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="19.25" Y="7.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wrapper\MusculeGroupWrapper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.NotifyDataErrorInfoBase">
-    <Position X="17.75" Y="3.5" Width="2" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="20.75" Y="3.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAIABAAAAAhoAA=</HashCode>
       <FileName>Wrapper\NotifyDataErrorInfoBase.cs</FileName>
@@ -432,10 +358,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WorkoutOrganizer.UI.Wrapper.WorkoutWrapper">
-    <Position X="16.75" Y="11.75" Width="1.75" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="22" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Wrapper\WorkoutWrapper.cs</FileName>
@@ -477,49 +400,49 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.Data.Repositories.IClientRepository" Collapsed="true">
-    <Position X="35.5" Y="15.25" Width="1.5" />
+    <Position X="5.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Data\Repositories\IClientRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.Data.Repositories.IEquipmentRepository" Collapsed="true">
-    <Position X="37.75" Y="15.25" Width="1.5" />
+    <Position X="7.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Data\Repositories\IEquipmentRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.Data.Repositories.IExerciseRepository" Collapsed="true">
-    <Position X="40" Y="15.25" Width="1.5" />
+    <Position X="9.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Data\Repositories\IExerciseRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.Data.Repositories.IExerciseSetupRepository" Collapsed="true">
-    <Position X="42.25" Y="15.25" Width="1.5" />
+    <Position X="12" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\Repositories\IExerciseSetupRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.Data.Repositories.IGenericRepository&lt;T&gt;" Collapsed="true">
-    <Position X="36.5" Y="14" Width="2.5" />
+    <Position X="6.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAMAAAAAAAAAAEAAAAAABAAAAIAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Data\Repositories\IGenericRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.Data.Repositories.IMusculeGroupRepository" Collapsed="true">
-    <Position X="30" Y="15.25" Width="2.25" />
+    <Position X="0.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Data\Repositories\IMusculeGroupRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.Data.Repositories.IWorkoutRepository" Collapsed="true">
-    <Position X="32.5" Y="15.25" Width="2.25" />
+    <Position X="3" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAEAAAFAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Data\Repositories\IWorkoutRepository.cs</FileName>
@@ -533,21 +456,21 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.ViewModel.IClientDetailViewModel" Collapsed="true">
-    <Position X="30.75" Y="10" Width="1.5" />
+    <Position X="0.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\IClientDetailViewModel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.ViewModel.IDetailViewModel" Collapsed="true">
-    <Position X="33" Y="8.75" Width="1.5" />
+    <Position X="2.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\IDetailViewModel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.ViewModel.IExerciseDetailViewModel" Collapsed="true">
-    <Position X="33" Y="10" Width="1.5" />
+    <Position X="2.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\IExerciseDetailViewModel.cs</FileName>
@@ -561,7 +484,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="WorkoutOrganizer.UI.ViewModel.IWorkoutDetailViewModel" Collapsed="true">
-    <Position X="35.25" Y="10" Width="1.5" />
+    <Position X="5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\IWorkoutDetailViewModel.cs</FileName>

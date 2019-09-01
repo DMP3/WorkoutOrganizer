@@ -16,11 +16,11 @@ namespace WorkoutOrganizer.Model
 
         [Required(ErrorMessage = "Полето е задължително")]
         [StringLength(50, ErrorMessage = "Името трябва да е с дължина между {2} и {1} символа.", MinimumLength = 2)]
-        [RegularExpression(@"^[а-яА-Яa-zA-Z''-'\s]{1,50}$", ErrorMessage = "Симовлът не е позволен")]
+        [RegularExpression(@"^[а-яА-Яa-zA-Z''-'\s]{1,100}$", ErrorMessage = "Симовлът не е позволен")]
         public string FirstName { get; set; }
 
         [StringLength(50, ErrorMessage = "Името трябва да е с максимална дължина- {1} символа")]
-        [RegularExpression(@"^[а-яА-Яa-zA-Z''-'\s]{1,50}$", ErrorMessage = "Симовлът не е позволен")]
+        [RegularExpression(@"^[а-яА-Яa-zA-Z''-'\s]{1,100}$", ErrorMessage = "Симовлът не е позволен")]
         public string LastName { get; set; }
 
         [EmailAddress(ErrorMessage = "Невалиден Email адрес")]

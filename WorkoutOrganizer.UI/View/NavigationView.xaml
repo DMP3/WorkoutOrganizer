@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WorkoutOrganizer.UI.View"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="500">
+             d:DesignHeight="999" d:DesignWidth="500">
     <UserControl.Resources>
         <Style x:Key="NaviItemContainerStyle" TargetType="ContentPresenter">
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -39,10 +39,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Expander Header="Клиенти" MaxHeight="300" IsExpanded="True">
+        <Expander Header="Клиенти" MaxHeight="330" IsExpanded="True">
             <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
                 <ItemsControl ItemsSource="{Binding Clients}"
@@ -52,7 +52,7 @@
             </ScrollViewer>
         </Expander>
 
-        <Expander Header="Тренировки" MaxHeight="300" IsExpanded="True" Grid.Row="1">
+        <Expander Header="Тренировки" MaxHeight="330" IsExpanded="True" Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
                 <ItemsControl ItemsSource="{Binding Workouts}"
@@ -61,7 +61,7 @@
                           Margin="10"/>
             </ScrollViewer>
         </Expander>
-        <Expander Header="Упражнения" MaxHeight="300" Grid.Row="2" IsExpanded="True">
+        <Expander Header="Упражнения" Grid.Row="2" IsExpanded="True">
             <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
                 <ItemsControl ItemsSource="{Binding Exercises}"
